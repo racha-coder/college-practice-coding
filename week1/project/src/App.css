@@ -1,0 +1,178 @@
+.wrapper header {
+    font-size: clamp(1.5rem, 2vw, 5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    img {
+        width: 7vw;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+}
+
+.question-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    width: max(20rem, 60vw);
+    padding: 0 2rem 1rem 2rem;
+    border-radius: .75rem;
+}
+
+.question-wrapper .question {
+    margin-block: 2rem;
+}
+
+.option-wrapper {
+    width: 100%;
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+}
+
+.question-number {
+    margin: 1rem;
+}
+
+.option-wrapper .option {
+    display: flex;
+    border: 1px solid;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .75rem;
+
+    span:first-child {
+        padding-right: 1rem;
+    }
+}
+
+.option-wrapper label span {
+    margin-right: 1rem;
+}
+
+.question-wrapper .button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-wrapper button {
+    place-self: end;
+    padding: .5rem 2rem;
+    border-radius: .35vw;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 400ms, color 400ms, border 400ms;
+
+
+    &.next:hover {
+        background-color: black;
+        color: white;
+    }
+
+    &.skip:hover {
+        background-color: #1ea9ff;
+        border-color: #1ea9ff;
+    }
+}
+
+.wrapper .prev {
+    top: 50%;
+    left: 20%;
+}
+
+.wrapper .next {
+    top: 50%;
+    right: 20%;
+}
+
+.bg-green {
+    background-color: lightseagreen;
+}
+
+.error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translate(50%); */
+    width: 50%;
+    background-color: red;
+    color: white;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    margin: .5rem;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    transition: opacity .5s;
+    animation: slideleft .5s linear forwards;
+
+    span {
+        background-color: #fff;
+        color: red;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+        font-family: Helvetica, sans-serif;
+    }
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10vw;
+}
+
+.go-again {
+    margin: 3rem;
+    border: 1px solid;
+    padding: .5rem .75rem;
+    border-radius: .25vw;
+    cursor: pointer;
+    transition: background-color 400ms, color 400ms;
+
+    &:hover {
+        background-color: #000;
+        color: white;
+    }
+}
+
+@keyframes slideleft {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateX(40%);
+    }
+
+    50% {
+        transform: translateX(60%);
+    }
+
+    75% {
+        transform: translateX(45%);
+    }
+
+
+    to {
+        opacity: 1;
+        transform: translateX(50%);
+    }
+}
