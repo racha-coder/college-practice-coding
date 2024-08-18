@@ -1,0 +1,180 @@
+.input-section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+
+    input {
+        width: 300px;
+        background-color: transparent;
+        border: 1px solid #fff2;
+        outline: none;
+        padding: .5rem;
+        color: white;
+        border-radius: .25rem;
+
+        &::placeholder {
+            color: #fff7;
+        }
+    }
+
+    select {
+        padding: .25rem;
+        border-radius: .25rem;
+    }
+
+    button {
+        /* background-color: hsl(221, 100%, 59%); */
+        background-color: hsl(10, 100%, 59%);
+        padding: .5rem 1rem;
+        border: none;
+        border-radius: .25rem;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.flex-wrapper {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    background-color: #555;
+    border-radius: .5rem;
+}
+
+.flex-wrapper header {
+    font-size: larger;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    padding: .5rem;
+    border-radius: inherit;
+    font-family: Helvetica, sans-serif;
+
+    &.todo {
+        /* background-color: hsl(7, 75%, 65%); */
+        background-color: hsl(225, 75%, 65%);
+    }
+
+    &.inprogress {
+        /* background-color: hsl(50, 75%, 65%); */
+        background-color: hsl(265, 75%, 65%);
+    }
+
+    &.done {
+        background-color: hsl(120, 75%, 65%);
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 15px;
+        height: 15px;
+        left: 0;
+        top: 50%;
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.flex-item {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    gap: .5rem;
+    padding: .5rem;
+    background-color: #999;
+    border-radius: inherit;
+    font-weight: 600;
+
+    &.todo {
+        /* background-color: hsl(0, 75%, 90%); */
+        background-color: hsl(225, 75%, 90%);
+    }
+
+    &.inprogress {
+        /* background-color: hsl(50, 75%, 90%); */
+        background-color: hsl(265, 75%, 90%);
+    }
+
+    &.done {
+        background-color: hsl(120, 75%, 90%);
+    }
+}
+
+.flex-item .task-wrapper {
+    padding: 1rem;
+    /* background-color: #ccc; */
+    text-align: center;
+    border-radius: inherit;
+    transition: .5s;
+
+    &.todo {
+        /* background-color: hsl(0, 75%, 75%); */
+        background-color: hsl(225, 75%, 75%);
+    }
+
+    &.inprogress {
+        /* background-color: hsl(50, 75%, 75%); */
+        background-color: hsl(265, 75%, 75%);
+    }
+
+    &.done {
+        background-color: hsl(120, 75%, 75%);
+    }
+}
+
+.flex-item .task-wrapper:active {
+    opacity: .4;
+}
+
+
+@media screen and (width <=800px) {
+
+    .input-section form {
+        margin-top: 2rem;
+    }
+
+    .flex-wrapper {
+        width: 100vw;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .flex-item {
+        width: calc(50% - .5rem);
+        height: 200px;
+    }
+}
+
+@media screen and (width <=450px) {
+    .input-section form {
+        flex-direction: column;
+
+        input {
+            width: 80%;
+        }
+
+        select {
+            width: 70%;
+            text-align: center;
+        }
+
+        button {
+            padding-inline: 3rem;
+        }
+    }
+
+    .flex-wrapper {
+        width: 100%;
+    }
+
+    .flex-item {
+        width: 100%;
+    }
+}
